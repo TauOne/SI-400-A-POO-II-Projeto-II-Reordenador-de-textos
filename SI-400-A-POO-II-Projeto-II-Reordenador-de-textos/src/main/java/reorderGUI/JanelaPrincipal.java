@@ -59,7 +59,7 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
     }
 
     void inicia() {
-        this.setMsgStatus(ConstantesGlobais.universidade);
+        this.setMsgStatus(ConstantesGlobais.statusConexao);
         this.setVisible(true);
 
         this.rodando = true;
