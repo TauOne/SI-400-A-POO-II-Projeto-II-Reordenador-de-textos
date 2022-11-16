@@ -11,4 +11,11 @@
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>com.mycompany.si.a.poo.ii.projeto.ii.reordenador.de.textos.SI400APOOIIProjetoIIReordenadorDeTextos</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>LATEST</version>
+        </dependency>
+    </dependencies>
 </project>
