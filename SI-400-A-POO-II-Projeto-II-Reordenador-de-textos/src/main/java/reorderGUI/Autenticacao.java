@@ -14,8 +14,8 @@ public class Autenticacao extends JDialog {
 
     public Autenticacao(JFrame janelaPrincipal) {
         this.setTitle("Autenticação");
-        this.setSize(380, 170);
         setContentPane(contentPane);
+        this.setSize(380, 170);
         setLocationRelativeTo(janelaPrincipal);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         getRootPane().setDefaultButton(buttonOK);
