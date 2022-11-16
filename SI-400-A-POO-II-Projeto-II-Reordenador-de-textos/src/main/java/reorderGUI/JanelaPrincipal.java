@@ -1,21 +1,10 @@
 package reorderGUI;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.HeadlessException;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 
 class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
@@ -45,13 +34,14 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
     }
 
     private void configuraJanela() {
-        this.setSize((int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 0.7), (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 0.67));
+        this.setSize((int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 0.8), (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 0.77));
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout(5, 5));
     }
 
     private void inicializaAdicionaComponentes() {
+
         this.painelStatus = new JPanel();
         this.labelStatus = new JLabel();
         this.painelStatus.add(labelStatus);
@@ -60,8 +50,7 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
         this.add(painelStatus, BorderLayout.SOUTH);
 
         this.painelFundo = new PainelFundo();
-        this.painelRolagem = new JScrollPane(painelFundo, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        this.add(painelRolagem, BorderLayout.CENTER);
+        this.add(painelFundo, BorderLayout.CENTER);
 
     }
 
@@ -144,7 +133,7 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
     @Override
     public void run() {
         while (this.rodando) {
-            painelFundo.repaint();
+            //painelFundo.repaint();
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
