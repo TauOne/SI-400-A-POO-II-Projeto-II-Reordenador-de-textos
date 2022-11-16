@@ -1,5 +1,7 @@
 package reorderGUI;
 
+import connection.DAO;
+import connection.DAOCreator;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -66,6 +68,9 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
         Thread serverDispatcher = new Thread(this);
         serverDispatcher.start();
+        /*DAO database = DAOCreator.factoryDAO("LocalDAO");
+        database.getConnection();
+        database.retrieve();*/
     }
 
     private void criaAdicionaMenu() {
