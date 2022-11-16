@@ -153,8 +153,8 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable
 
       if (evento.getSource() == menuItemAutenticacao)
          {
-         painelFundo.setCorFundo(Color.red);
-         }
+            new Autenticacao(this);
+         }        
       }
 
    @Override
