@@ -21,7 +21,6 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
     private static final long serialVersionUID = 1L;
     private JPanel painelStatus;
-    private JLabel painelTexto;
     private JLabel labelStatus;
     private JMenuBar menuBar;
     private JMenu menuArquivo;
@@ -62,12 +61,8 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
         this.painelFundo = new PainelFundo();
         this.painelRolagem = new JScrollPane(painelFundo, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        this.painelTexto = new JLabel();
-        this.painelTexto.setSize((int) (this.getWidth() * 0.5), (int) (this.getHeight() * 0.5));
-        this.painelTexto.add(painelRolagem, BorderLayout.CENTER);
-        this.painelTexto.setLayout(new BorderLayout(5, 5));
-        this.painelTexto.setBackground(Color.CYAN);
-        this.add(painelTexto, BorderLayout.CENTER);
+        this.add(painelRolagem, BorderLayout.CENTER);
+
     }
 
     void setMsgStatus(String texto) {
