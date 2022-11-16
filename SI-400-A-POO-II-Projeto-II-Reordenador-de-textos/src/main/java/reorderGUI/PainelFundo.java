@@ -14,12 +14,13 @@ class PainelFundo extends JPanel
       PainelFundo()
       {
       super();
-      this.txtArea = new JTextArea(45,100);
+      this.txtArea = new JTextArea(20,50);
+      this.txtArea.setSize((int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 0.5), (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 0.5));
       this.setBorder(BorderFactory.createLineBorder(Color.black));
       JScrollPane scrollPane = new JScrollPane( txtArea );
       this.txtArea.setBorder(BorderFactory.createLineBorder(Color.black));
       txtArea.setLineWrap(true);
-      txtArea.setFont(new Font("Verdana", Font.BOLD, 11));
+      txtArea.setFont(new Font("Verdana", Font.BOLD, 18));
       this.txtArea.setEditable(true);
       this.setForeground(corFrente);
       this.setBackground(corFundo);
