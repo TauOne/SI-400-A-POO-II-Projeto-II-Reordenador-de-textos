@@ -1,9 +1,12 @@
 package reorderGUI;
 
+import connection.DAO;
+import connection.DAOCreator;
 import javax.swing.*;
 import java.awt.event.*;
 
 public class Autenticacao extends JDialog {
+
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -43,8 +46,14 @@ public class Autenticacao extends JDialog {
 
     private void onOK() {
         // add your code here
-        System.out.println(txtUsuario.getText());
-        System.out.println(txtSenha.getPassword());
+        DAO database = DAOCreator.factoryDAO("LocalDAO");
+        if(!database.getConnection(txtUsuario.getText(), txtSenha.getPassword().toString()).equals(null)){
+            ConstantesGlobais.statusConexao = "Conectado";
+            for(String linha : database.retrieve()){
+                ConstantesGlobais.textoFinal.add(linha);
+            }
+        }
+        
         dispose();
     }
 

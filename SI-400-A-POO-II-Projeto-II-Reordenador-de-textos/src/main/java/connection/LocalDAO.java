@@ -20,7 +20,7 @@ public class LocalDAO implements DAO {
     Integer groupId = 11;
 
     @Override
-    public Connection getConnection() {
+    public Connection getConnection(String usuario, String senha) {
         if (con == null) {
             try {
                 con = DriverManager.getConnection(DBURL);

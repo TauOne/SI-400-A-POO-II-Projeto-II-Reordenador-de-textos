@@ -1,15 +1,20 @@
 package reorderGUI;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class ConstantesGlobais
    {
    public static final String autor        = "Prof. Dr. Andre F. de Angelis";
    public static final String escola       = "FT - Faculdade de Tecnologia";
-   public static String statusConexao = "Desconectado";
+   public static String statusConexao      = "Desconectado";
    public static final String universidade = "Unicamp - Universidade Estadual de Campinas";
    public static final String nome         = "Demonstracao da Interface Grafica de Usuario";
    public static final String versao       = "Ver. 1.0.3";
 
    public static final String arqLogotipo  = "logouni.jpg";
+   
+   public static List<String> textoFinal = new ArrayList();
 
    /**
     * Creates a String with the informative text for the AboutScreen

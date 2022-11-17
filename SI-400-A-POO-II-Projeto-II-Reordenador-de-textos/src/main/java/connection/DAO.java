@@ -8,6 +8,6 @@ import java.util.List;
  * @author 
  */
 public interface DAO {
-    public Connection getConnection();
+    public Connection getConnection(String usuario, String senha);
     public List<String> retrieve();
 }

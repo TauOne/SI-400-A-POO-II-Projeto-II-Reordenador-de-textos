@@ -21,7 +21,7 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
     private JMenuItem menuItemAjuda;
     private JMenuItem menuItemSobre;
     private PainelFundo painelFundo;
-    private JScrollPane painelRolagem;
+    private JMenuItem menuItemLimpeza;
     private boolean rodando;
 
     JanelaPrincipal() throws HeadlessException {
@@ -68,9 +68,13 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
         Thread serverDispatcher = new Thread(this);
         serverDispatcher.start();
-        /*DAO database = DAOCreator.factoryDAO("LocalDAO");
-        database.getConnection();
-        database.retrieve();*/
+        while (ConstantesGlobais.statusConexao.equals("Desconectado")) {
+
+        }
+        for (String linha : ConstantesGlobais.textoFinal) {
+
+            painelFundo.getTxtArea().setText(painelFundo.getTxtArea().getText() + linha);
+        }
     }
 
     private void criaAdicionaMenu() {
@@ -78,6 +82,9 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
         menuItemAutenticacao = new JMenuItem("Autenticação");
         menuArquivo.add(menuItemAutenticacao);
+
+        menuItemLimpeza = new JMenuItem("Limpar");
+        menuArquivo.add(menuItemLimpeza);
 
         menuArquivo.addSeparator();
 
@@ -131,7 +138,11 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
         }
 
         if (evento.getSource() == menuItemAutenticacao) {
-            //new Autenticacao(this);
+            new Autenticacao(this);
+            painelFundo.limpaConteudo();
+        }
+        if (evento.getSource() == menuItemLimpeza) {
+            painelFundo.limpaConteudo();
         }
     }
 

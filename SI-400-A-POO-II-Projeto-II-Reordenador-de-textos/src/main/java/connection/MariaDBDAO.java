@@ -16,17 +16,18 @@ import java.util.logging.Logger;
  * @author
  */
 public class MariaDBDAO implements DAO {
-
+    String usuario = "si400_2022";
+    String senha = "si400_2022";
     private static Connection con = null;
     Integer groupId = 11;
 
     @Override
-    public Connection getConnection() {
-        if (con == null) {
+    public Connection getConnection(String usuario, String senha) {
+        if (con == null && usuario.equals(this.usuario) && senha.equals(this.senha)) {
             try {
                 con = DriverManager.getConnection(
                         "jdbc:mariadb://localhost:3306/SI400",
-                        "si400_2022", "si400_2022"
+                        usuario, senha
                 );
                 if (con != null) {
                     DatabaseMetaData meta = con.getMetaData();
@@ -34,8 +35,10 @@ public class MariaDBDAO implements DAO {
             } catch (SQLException ex) {
                 Logger.getLogger(MariaDBDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
+            return con;
+        }else{
+        return null;
         }
-        return con;
     }
 
     @Override
