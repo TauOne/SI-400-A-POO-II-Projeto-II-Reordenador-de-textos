@@ -5,6 +5,10 @@ import connection.DAOCreator;
 import javax.swing.*;
 import java.awt.event.*;
 
+/**
+* Interface gráfica para autenticação do usuário.
+* @author 
+*/
 public class Autenticacao extends JDialog {
 
     private JPanel contentPane;
@@ -43,7 +47,13 @@ public class Autenticacao extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
-
+    
+    /**
+    * Método que é executado quando o usuário clica no botão "OK",<br>
+    * que verifica se o usuário e a senha estão corretos, obtém a instância<br>
+    * DAO do banco de dados e percorre o ArrayList retornado, adicionando<br>
+    * as linhas e uma quebra de linha ao texto final a cada iteração.
+    */
     private void onOK() {
         // add your code here
         String i = "LocalDAO";

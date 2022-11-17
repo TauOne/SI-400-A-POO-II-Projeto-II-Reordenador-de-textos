@@ -6,25 +6,20 @@ import java.io.PrintWriter;
 import javax.swing.JTextArea;
 
 /**
- * Classe para criação o arquivo .csv
- *
- * @author Gabriel Marino 247455
+ * Classe de método único para criação e escrita do arquivo resultante.<br>
+ * @author
  */
 public class Exportacao {
 
     /**
      * Método unico da classe para criação do arquivo<br>
-     * e escrita no mesmo, contendo o mesmo nome do arquivo<br>
-     * de origem porém num formato .csv<br>
+     * e escrita no mesmo<br>
      * <b>Uso:</b><br>
-     * Exportacao.escrever(Mapa(chave String , valor String), String nome do
+     * Exportacao.escrever(JTextArea texto a ser gravado, String nome do
      * arquivo);<br>
-     *
-     * @param map Recebe de preferência uma TreeMap para ser escrita no arquivo
-     * de destino<br>
-     * @param arg Recebe o nome do arquivo no formato .txt a ser convertido em
-     * .csv.
-     * @author Gabriel Marino 247455
+     * @param jText Recebe o texto que será gravado no arquivo criado.<br>
+     * @param name Recebe o nome do arquivo a ser escrito.<br>
+     * @author
      */
     public static void escrever(JTextArea jText, String name) {
         try {

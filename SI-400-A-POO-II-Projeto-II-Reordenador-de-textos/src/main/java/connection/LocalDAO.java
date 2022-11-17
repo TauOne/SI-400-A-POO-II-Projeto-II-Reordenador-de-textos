@@ -11,7 +11,7 @@ import java.util.List;
 import reorderGUI.ConstantesGlobais;
 
 /**
- *
+ * Classe que implementa DAO para banco de dados local, no caso o SQLite<br>
  * @author
  */
 public class LocalDAO implements DAO {
@@ -20,6 +20,14 @@ public class LocalDAO implements DAO {
     private static Connection con = null;
     Integer groupId = 11;
 
+    /**
+    * Método que obtém a conexão, caso ainda não exista<br>
+    * via autenticação de usuário e senha.
+    * @params usuário e senha, respectivamente.
+    * @return a conexão com o banco de dados efetivamente, caso<br>
+    * a autenticação ocorra com sucesso.
+    * @author
+    */
     @Override
 
     public Connection getConnection(String usuario, String senha) {
@@ -39,7 +47,15 @@ public class LocalDAO implements DAO {
         }
         return con;
     }
-
+    
+    /**
+    * Método que executa o comando SQL no banco para selecionar<br>
+    * todos os fragmentos pertencentes ao nosso grupo e os ordena por<br>
+    * numero da linha e finalmente armazena cada string em um ArrayList<br>
+    * e retorna o texto completo.
+    * @return um ArrayList contendo os fragmentos ordenados.
+    * @author
+    */
     @Override
     public List retrieve() {
         List<String> texto = new ArrayList();
