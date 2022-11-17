@@ -8,6 +8,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+/**
+* Interface gráfica da janela principal do sistema.<br>
+* @author
+*/
 class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
     private static final long serialVersionUID = 1L;
@@ -24,6 +28,7 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
     private JMenuItem menuItemLimpeza;
     private boolean rodando;
 
+    
     JanelaPrincipal() throws HeadlessException {
         super(ConstantesGlobais.getNomeVersao());
 
@@ -35,6 +40,10 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
         inicializaAdicionaComponentes();
     }
 
+    /**
+    * Método que configura a janela.<br>
+    * @author
+    */
     private void configuraJanela() {
         this.setSize((int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 0.8), (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 0.77));
         this.setLocationRelativeTo(null);
@@ -55,7 +64,13 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
         this.add(painelFundo, BorderLayout.CENTER);
 
     }
-
+    
+    /**
+    * Método que altera a cor do fundo para os casos de sucesso
+    * e fracasso de alterar o campo de texto.
+    * @params ?
+    * @author
+    */
     void setMsgStatus(String texto, int sucesso) {
         this.labelStatus.setText(texto);
         if(sucesso == 1){
@@ -67,6 +82,10 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
         }
     }
 
+    /**
+    * Método que inicia a janela principal
+    * @author
+    */
     void inicia() {
         this.setMsgStatus(ConstantesGlobais.statusConexao,0);
         this.setVisible(true);
@@ -140,6 +159,11 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
         }
     }
 
+    /**
+    * Método que implementa as funcionalidades dos botões da janela principal.<br>
+    * @params evento é um click em um botão.<br>
+    * @author
+    */
     @Override
     public void actionPerformed(ActionEvent evento) {
         if (evento.getSource() == menuItemSaida) {
