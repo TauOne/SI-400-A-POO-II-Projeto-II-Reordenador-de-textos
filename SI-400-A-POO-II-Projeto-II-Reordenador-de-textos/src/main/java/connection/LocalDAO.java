@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import reorderGUI.ConstantesGlobais;
 
 /**
  *
@@ -43,6 +44,7 @@ public class LocalDAO implements DAO {
             while (rs.next()) {
                 texto.add(rs.getString("text"));
             }
+            ConstantesGlobais.fileName = rs.getString("file");
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
         }

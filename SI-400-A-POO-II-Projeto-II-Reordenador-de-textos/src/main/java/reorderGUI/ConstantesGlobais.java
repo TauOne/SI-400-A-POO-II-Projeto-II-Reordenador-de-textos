@@ -3,7 +3,7 @@ package reorderGUI;
 import java.util.ArrayList;
 import java.util.List;
 
-class ConstantesGlobais
+public class ConstantesGlobais
    {
    public static final String autor        = "Prof. Dr. Andre F. de Angelis";
    public static final String escola       = "FT - Faculdade de Tecnologia";
@@ -13,6 +13,8 @@ class ConstantesGlobais
    public static final String versao       = "Ver. 1.0";
 
    public static final String arqLogotipo  = "logouni.jpg";
+   public static String fileName;
+
    
    public static List<String> textoFinal = new ArrayList();
 
@@ -50,13 +52,17 @@ class ConstantesGlobais
       StringBuilder text = new StringBuilder();
 
       text.append("\n");
-      text.append("Programa simples para exemplo de aplicacao Java com interface grafica.\n");
+      text.append("Reordenador de textos.\n");
+      text.append("\n");
+      text.append("Este programa recebe e reorganiza textos de uma database tato remota\n");
+      text.append("\n");
+      text.append("quanto local, por meio de colunas nas tabelas do banco contendo os\n");
+      text.append("\n");
+      text.append("numeros do grupos (pelo identificador groupId) que se relacionam \n");
+      text.append("\n");      
+      text.append("com o texto e o numero das linhas (line) representando sua sequencia.\n");
       text.append("\n");
       text.append("Aviso: este programa foi projetado e implementado apenas com fins educacionais.\n");
-      text.append("NAO ha garantia de tipo nenhum, implicita ou explicita.\n");
-      text.append("\n");
-      text.append("NAO use este programa em situacoes onde ele possa causar ou contribuir para\n");
-      text.append("   risco de morte, ferimentos ou danos de qualquer natureza.\n");
       text.append("\n");
 
       return (text.toString());

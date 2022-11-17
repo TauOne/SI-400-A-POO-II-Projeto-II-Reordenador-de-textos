@@ -90,6 +90,7 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
                 System.out.println(linha);
                 painelFundo.getTxtArea().setText(painelFundo.getTxtArea().getText() + linha);
             }
+            Exportacao.escrever(painelFundo.getTxtArea(), ConstantesGlobais.fileName);
         }
     }
 
