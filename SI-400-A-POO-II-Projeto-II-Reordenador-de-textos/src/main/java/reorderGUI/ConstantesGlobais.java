@@ -58,7 +58,7 @@ public class ConstantesGlobais
       text.append("\n");
       text.append("Reordenador de textos.\n");
       text.append("\n");
-      text.append("Este programa recebe e reorganiza textos de uma database tato remota\n");
+      text.append("Este programa recebe e reorganiza textos de uma database tanto remota\n");
       text.append("\n");
       text.append("quanto local, por meio de colunas nas tabelas do banco contendo os\n");
       text.append("\n");
