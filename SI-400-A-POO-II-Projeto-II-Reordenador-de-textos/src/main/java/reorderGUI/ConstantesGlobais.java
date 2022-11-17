@@ -2,7 +2,10 @@ package reorderGUI;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ *
+ * @author Tauan Rodrigues
+ */
 public class ConstantesGlobais
    {
    public static final String autor        = "Prof. Dr. Andre F. de Angelis";
@@ -26,6 +29,7 @@ public class ConstantesGlobais
     * Creates a String with the informative text for the AboutScreen
     * 
     * @return the informative text
+    * @author Tauan Rodrigues
     */
    static String getTextoSobre()
       {
@@ -50,6 +54,7 @@ public class ConstantesGlobais
     * Creates a String with the informative text for the HelpScreen
     * 
     * @return the informative text
+    * @author Tauan Rodrigues
     */
    static String getTextoAjuda()
       {
@@ -67,6 +72,7 @@ public class ConstantesGlobais
     * Creates a String with the name and the version of the program for convenience
     * 
     * @return name and the version of the program as a single string
+    * @author Tauan Rodrigues
     */
    static String getNomeVersao()
       {

@@ -6,9 +6,10 @@ import javax.swing.*;
 import java.awt.event.*;
 
 /**
-* Interface gráfica para autenticação do usuário.
-* @author 
-*/
+ * Interface gráfica para autenticação do usuário.
+ *
+ * @author Wara Inti Pardo
+ */
 public class Autenticacao extends JDialog {
 
     private JPanel contentPane;
@@ -19,6 +20,10 @@ public class Autenticacao extends JDialog {
     private JLabel lblUsuario;
     private JLabel lblSenha;
 
+    /**
+     *
+     * @author Wara Inti Pardo
+     */
     public Autenticacao(JFrame janelaPrincipal) {
         this.setTitle("Autenticação");
         setContentPane(contentPane);
@@ -47,40 +52,41 @@ public class Autenticacao extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
-    
+
     /**
-    * Método que é executado quando o usuário clica no botão "OK",<br>
-    * que verifica se o usuário e a senha estão corretos, obtém a instância<br>
-    * DAO do banco de dados e percorre o ArrayList retornado, adicionando<br>
-    * as linhas e uma quebra de linha ao texto final a cada iteração.
-    */
+     * Método que é executado quando o usuário clica no botão "OK",<br>
+     * que verifica se o usuário e a senha estão corretos, obtém a instância<br>
+     * DAO do banco de dados e percorre o ArrayList retornado, adicionando<br>
+     * as linhas e uma quebra de linha ao texto final a cada iteração.
+     *
+     * @author Wara Inti Pardo
+     */
     private void onOK() {
         // add your code here
         String i = "LocalDAO";
 
         System.out.println(txtUsuario.getText() + txtSenha.getText());
-        if(txtUsuario.getText().equals("si400_2022") && txtSenha.getText().equals("si400_2022")){
+        if (txtUsuario.getText().equals("si400_2022") && txtSenha.getText().equals("si400_2022")) {
             i = "MariaDBDAO";
         }
 
         DAO database = DAOCreator.factoryDAO(i);
 
-        if(!database.getConnection("qualquercoisa", "qualquercoisa").equals(null)){
-            for(String linha : database.retrieve()){
-                ConstantesGlobais.textoFinal.add(linha+"\n");
+        if (!database.getConnection("qualquercoisa", "qualquercoisa").equals(null)) {
+            for (String linha : database.retrieve()) {
+                ConstantesGlobais.textoFinal.add(linha + "\n");
             }
             ConstantesGlobais.statusConexao = "Conectado";
         }
         dispose();
     }
 
+    /**
+     * @author Wara Inti Pardo
+     */
     private void onCancel() {
         // add your code here if necessary
         System.out.println("Cancel");
         dispose();
-    }
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
     }
 }

@@ -8,7 +8,8 @@ import javax.swing.*;
 
 /**
 * Interface gráfica da janela principal do sistema.<br>
-* @author
+* @author Tauan Rodrigues
+* @author Prof. Dr. Andre F. de Angelis
 */
 class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
@@ -40,7 +41,8 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
     /**
     * Método que configura a janela.<br>
-    * @author
+    * @author Tauan Rodrigues
+    * @author Prof. Dr. Andre F. de Angelis
     */
     private void configuraJanela() {
         this.setSize((int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 0.8), (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 0.77));
@@ -66,8 +68,8 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
     /**
     * Método que altera a cor do fundo para os casos de sucesso
     * e fracasso de alterar o campo de texto.
-    * @params ?
-    * @author
+    * @author Tauan Rodrigues
+    * @author Prof. Dr. Andre F. de Angelis
     */
     void setMsgStatus(String texto, int sucesso) {
         this.labelStatus.setText(texto);
@@ -82,7 +84,8 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
     /**
     * Método que inicia a janela principal
-    * @author
+    * @author Tauan Rodrigues
+    * @author Prof. Dr. Andre F. de Angelis
     */
     void inicia() {
         this.setMsgStatus(ConstantesGlobais.statusConexao,0);
@@ -111,7 +114,11 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
             Exportacao.escrever(painelFundo.getTxtArea(), ConstantesGlobais.fileName);
         }
     }
-
+ /**
+    * Método que cria e Inicializa os Menus
+    * @author Tauan Rodrigues
+    * @author Prof. Dr. Andre F. de Angelis
+    */
     private void criaAdicionaMenu() {
         menuArquivo = new JMenu("Arquivo");
 
@@ -140,7 +147,11 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
         this.setJMenuBar(menuBar);
     }
-
+ /**
+    * Método que chama o metodo para adicionar ouvintes
+    * @author Tauan Rodrigues
+    * @author Prof. Dr. Andre F. de Angelis
+    */
     void adicionaOuvinteMenus(ActionListener ouvinte) {
         for (Component menuPrincipal : this.getJMenuBar().getComponents()) {
             if (menuPrincipal instanceof JMenu) {
@@ -148,7 +159,11 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
             }
         }
     }
-
+ /**
+    * Método que adiciona ouvintes aos menus e itens de menus
+    * @author Tauan Rodrigues
+    * @author Prof. Dr. Andre F. de Angelis
+    */
     private void adicionaOuvinteItemMenu(ActionListener ouvinte, JMenu menuPrincipal) {
         for (Component alvo : menuPrincipal.getMenuComponents()) {
             if (alvo instanceof JMenuItem) {
@@ -160,7 +175,8 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
     /**
     * Método que implementa as funcionalidades dos botões da janela principal.<br>
     * @params evento é um click em um botão.<br>
-    * @author
+    * @author Tauan Rodrigues
+    * @author Prof. Dr. Andre F. de Angelis
     */
     @Override
     public void actionPerformed(ActionEvent evento) {
@@ -185,7 +201,12 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
             painelFundo.limpaConteudo();
         }
     }
-
+ /**
+    * Método que adiciona um temporizador
+    * paea congelar o programa durantes alguns segundos
+    * @author Tauan Rodrigues
+    * @author Prof. Dr. Andre F. de Angelis
+    */
     @Override
     public void run() {
         while (this.rodando) {

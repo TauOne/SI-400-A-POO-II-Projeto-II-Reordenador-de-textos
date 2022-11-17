@@ -3,6 +3,10 @@ package reorderGUI;
 import javax.swing.*;
 import java.awt.event.*;
 
+/**
+ * 
+ * @author Wara Inti Pardo
+ */
 public class Ajuda extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
@@ -14,7 +18,10 @@ public class Ajuda extends JDialog {
     private JLabel imgRodrigo;
 
 
-
+/**
+ * 
+ * @author Wara Inti Pardo
+ */
     public Ajuda(JanelaPrincipal janelaPrincipal, String texto) {
         this.setTitle("Sobre");
         setContentPane(contentPane);
@@ -49,7 +56,10 @@ public class Ajuda extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
-
+/**
+ * 
+ * @author Wara Inti Pardo
+ */
     private void onOK() {
         // add your code here
         dispose();

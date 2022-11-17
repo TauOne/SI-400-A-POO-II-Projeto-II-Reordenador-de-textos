@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Interface DAO a ser implementada para cada SGBD específico.<br>
- * @author 
+ * @author Matheus Roberto
  */
 public interface DAO {
     public Connection getConnection(String usuario, String senha);

@@ -5,14 +5,16 @@ import java.awt.HeadlessException;
 /**
 * Classe Main do programa que abre a interface gráfica, a inicializa,<br>
 * dispara exceções e mostra a mensagem de erro no console.
-* @author 
+* @author Tauan Rodrigues
+* @author Prof. Dr. Andre F. de Angelis
 */
 public class Main
    {
    /**
    * Método main que abre a interface gráfica, a inicializa e dispara exceções.
    * @params args são os argumentos passados por linha de comando.
-   * @author
+   * @author Tauan Rodrigues
+   * @author Prof. Dr. Andre F. de Angelis
    */
    public static void main(String[] args)
       {
@@ -34,7 +36,8 @@ public class Main
    /**
    * Método que é executado caso ocorra alguma exceção no método main,<br>
    * imprimindo mensagem de erro no console.
-   * @author
+   * @author Tauan Rodrigues
+   * @author Prof. Dr. Andre F. de Angelis
    */
    private static void imprMsgErroETermina(String mensagem, Exception ocorrencia)
       {

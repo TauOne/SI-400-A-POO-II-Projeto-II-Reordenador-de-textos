@@ -12,7 +12,7 @@ import reorderGUI.ConstantesGlobais;
 
 /**
  * Classe que implementa DAO para banco de dados local, no caso o SQLite<br>
- * @author
+ * @author Matheus Roberto
  */
 public class LocalDAO implements DAO {
 
@@ -26,10 +26,9 @@ public class LocalDAO implements DAO {
     * @params usuário e senha, respectivamente.
     * @return a conexão com o banco de dados efetivamente, caso<br>
     * a autenticação ocorra com sucesso.
-    * @author
+    * @author Matheus Roberto
     */
     @Override
-
     public Connection getConnection(String usuario, String senha) {
         if (con == null) {
             try {
@@ -54,7 +53,7 @@ public class LocalDAO implements DAO {
     * numero da linha e finalmente armazena cada string em um ArrayList<br>
     * e retorna o texto completo.
     * @return um ArrayList contendo os fragmentos ordenados.
-    * @author
+    * @author Gabriel Marino
     */
     @Override
     public List retrieve() {

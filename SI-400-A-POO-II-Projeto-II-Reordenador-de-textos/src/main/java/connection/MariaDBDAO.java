@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  * Classe dedicada a implementação do DAO para o MariaDB<br>
- * @author
+ * @author Matheus Roberto
  */
 public class MariaDBDAO implements DAO {
     String usuario = "si400_2022";
@@ -29,7 +29,7 @@ public class MariaDBDAO implements DAO {
     * @params usuário e senha, respectivamente.
     * @return a conexão com o MariaDB efetivamente, caso<br>
     * a autenticação ocorra com sucesso.
-    * @author
+    * @author Matheus Roberto
     */
     @Override
     public Connection getConnection(String usuario, String senha) {
@@ -60,7 +60,8 @@ public class MariaDBDAO implements DAO {
     * numero da linha por fim armazena cada string em um ArrayList<br>
     * e retorna o texto completo.
     * @return um ArrayList contendo os fragmentos ordenados.
-    * @author
+    * @author 
+    * Gabriel Marino
     */
     @Override
     public List retrieve() {
