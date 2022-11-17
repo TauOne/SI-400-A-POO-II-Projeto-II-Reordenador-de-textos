@@ -76,6 +76,8 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
         Thread serverDispatcher = new Thread(this);
         serverDispatcher.start();
 
+        System.out.println(this.getClass().getResource("").getPath());
+        
         while (ConstantesGlobais.statusConexao.equals("Desconectado")) {
             System.out.println("Aguardando Conexão!");
             try {

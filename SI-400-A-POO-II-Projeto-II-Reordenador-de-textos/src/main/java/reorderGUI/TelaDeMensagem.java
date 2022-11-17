@@ -47,7 +47,7 @@ class TelaDeMensagem extends JDialog implements ActionListener
       add(painelTexto, BorderLayout.CENTER);
 
       painelLogotipo = new PainelLogotipo();
-      painelLogotipo.setPreferredSize(new Dimension(200, 220));
+      painelLogotipo.setPreferredSize(new Dimension(100, 220));
       painelLogotipo.setBorder(new TitledBorder(new LineBorder(Color.gray), ConstantesGlobais.escola));
       painelLogotipo.setBackground(Color.white);
       add(painelLogotipo, BorderLayout.WEST);

@@ -12,7 +12,11 @@ public class ConstantesGlobais
    public static final String nome         = "Projeto II - Reordenador de Texto";
    public static final String versao       = "Ver. 1.0";
 
-   public static final String arqLogotipo  = "logouni.jpg";
+   public static final String matheus  = "/images/imagem1.jpeg";
+   public static final String tauan  = "/images/imagem2.jpeg";
+   public static final String wara  = "/images/imagem3.jpeg";
+   public static final String gabriel  = "/images/imagem4.jpeg";
+   public static final String rodrigo  = "/images/imagem5.jpeg";
    public static String fileName;
 
    
