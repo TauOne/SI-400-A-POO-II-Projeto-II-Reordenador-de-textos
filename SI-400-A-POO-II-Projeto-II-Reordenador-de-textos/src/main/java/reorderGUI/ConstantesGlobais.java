@@ -54,21 +54,12 @@ public class ConstantesGlobais
    static String getTextoAjuda()
       {
       StringBuilder text = new StringBuilder();
-
-      text.append("\n");
-      text.append("Reordenador de textos.\n");
-      text.append("\n");
-      text.append("Este programa recebe e reorganiza textos de uma database tato remota\n");
-      text.append("\n");
-      text.append("quanto local, por meio de colunas nas tabelas do banco contendo os\n");
-      text.append("\n");
-      text.append("numeros do grupos (pelo identificador groupId) que se relacionam \n");
-      text.append("\n");      
-      text.append("com o texto e o numero das linhas (line) representando sua sequencia.\n");
-      text.append("\n");
-      text.append("Aviso: este programa foi projetado e implementado apenas com fins educacionais.\n");
-      text.append("\n");
-
+      text.append("Reordenador de textos.");
+      text.append("Este programa recebe e reorganiza textos de uma database tato remota");
+      text.append("quanto local, por meio de colunas nas tabelas do banco contendo os");
+      text.append("numeros do grupos (pelo identificador groupId) que se relacionam");
+      text.append("com o texto e o numero das linhas (line) representando sua sequencia.");
+      text.append("Aviso: este programa foi projetado e implementado apenas com fins educacionais.");
       return (text.toString());
       }
 

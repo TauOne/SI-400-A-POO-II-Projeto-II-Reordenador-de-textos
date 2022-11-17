@@ -1,7 +1,5 @@
 package reorderGUI;
 
-import connection.DAO;
-import connection.DAOCreator;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -148,7 +146,7 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
         }
 
         if (evento.getSource() == menuItemAjuda) {
-            (new TelaDeMensagem(this, "Ajuda - " + ConstantesGlobais.getNomeVersao(), ConstantesGlobais.getTextoAjuda())).setVisible(true);
+            new Ajuda(this, ConstantesGlobais.getTextoAjuda());
         }
 
         if (evento.getSource() == menuItemSobre) {

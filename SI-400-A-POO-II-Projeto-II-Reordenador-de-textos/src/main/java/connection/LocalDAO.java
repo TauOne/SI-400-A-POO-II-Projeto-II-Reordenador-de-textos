@@ -21,15 +21,20 @@ public class LocalDAO implements DAO {
     Integer groupId = 11;
 
     @Override
+
     public Connection getConnection(String usuario, String senha) {
         if (con == null) {
             try {
+                Class.forName("org.sqlite.JDBC");
                 con = DriverManager.getConnection(DBURL);
+
                 if (con != null) {
                     DatabaseMetaData meta = con.getMetaData();
                 }
             } catch (SQLException e) {
                 System.err.println("Exception: " + e.getMessage());
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
         }
         return con;
