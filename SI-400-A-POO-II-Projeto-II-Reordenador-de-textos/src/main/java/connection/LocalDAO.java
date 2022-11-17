@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class LocalDAO implements DAO {
 
-    public static final String DBURL = "jdbc:sqlite:SI400A";
+    public static final String DBURL = "jdbc:sqlite:SI400A.db";
     private static Connection con = null;
     Integer groupId = 11;
 
@@ -39,7 +39,7 @@ public class LocalDAO implements DAO {
         List<String> texto = new ArrayList();
         try {
             Statement s = (Statement) con.createStatement();
-            ResultSet rs = s.executeQuery("SELECT * FROM Fragmentos WHERE groupId = " + groupId + "ORDER BY line");
+            ResultSet rs = s.executeQuery("SELECT * FROM Fragmentos WHERE groupId = " + groupId + " ORDER BY line");
             while (rs.next()) {
                 texto.add(rs.getString("text"));
             }

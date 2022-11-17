@@ -68,6 +68,14 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
         Thread serverDispatcher = new Thread(this);
         serverDispatcher.start();
+        DAO database = DAOCreator.factoryDAO("LocalDAO");
+        if(!database.getConnection("qualquercoisa", "qualquercoisa").equals(null)){
+            ConstantesGlobais.statusConexao = "Conectado";
+            for(String linha : database.retrieve()){
+                ConstantesGlobais.textoFinal.add(linha);
+            }
+        }
+        
         while (ConstantesGlobais.statusConexao.equals("Desconectado")) {
 
         }
