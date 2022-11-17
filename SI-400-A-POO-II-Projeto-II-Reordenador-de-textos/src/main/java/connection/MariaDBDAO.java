@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Classe dedicada a implementação do DAO para o MariaDB<br>
  * @author
  */
 public class MariaDBDAO implements DAO {
@@ -23,6 +23,14 @@ public class MariaDBDAO implements DAO {
     private static Connection con = null;
     Integer groupId = 11;
 
+    /**
+    * Método que obtém a conexão, caso ainda não exista<br>
+    * via autenticação de usuário e senha.
+    * @params usuário e senha, respectivamente.
+    * @return a conexão com o MariaDB efetivamente, caso<br>
+    * a autenticação ocorra com sucesso.
+    * @author
+    */
     @Override
     public Connection getConnection(String usuario, String senha) {
         if (con == null && usuario.equals(this.usuario) && senha.equals(this.senha)) {
@@ -43,6 +51,14 @@ public class MariaDBDAO implements DAO {
         }
     }
 
+     /**
+    * Método que executa o comando SQL no banco para selecionar<br>
+    * todos os fragmentos pertencentes ao nosso grupo e os ordena por<br>
+    * numero da linha por fim armazena cada string em um ArrayList<br>
+    * e retorna o texto completo.
+    * @return um ArrayList contendo os fragmentos ordenados.
+    * @author
+    */
     @Override
     public List retrieve() {
         List<String> texto = new ArrayList();
