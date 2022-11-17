@@ -9,8 +9,8 @@ class ConstantesGlobais
    public static final String escola       = "FT - Faculdade de Tecnologia";
    public static String statusConexao      = "Desconectado";
    public static final String universidade = "Unicamp - Universidade Estadual de Campinas";
-   public static final String nome         = "Demonstracao da Interface Grafica de Usuario";
-   public static final String versao       = "Ver. 1.0.3";
+   public static final String nome         = "Projeto II - Reordenador de Texto";
+   public static final String versao       = "Ver. 1.0";
 
    public static final String arqLogotipo  = "logouni.jpg";
    

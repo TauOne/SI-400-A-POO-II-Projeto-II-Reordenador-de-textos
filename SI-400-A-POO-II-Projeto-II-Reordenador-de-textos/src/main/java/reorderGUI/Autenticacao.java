@@ -11,7 +11,7 @@ public class Autenticacao extends JDialog {
     private JButton buttonOK;
     private JButton buttonCancel;
     private JTextField txtUsuario;
-    private JPasswordField txtSenha;
+    private JTextField txtSenha;
     private JLabel lblUsuario;
     private JLabel lblSenha;
 
@@ -46,14 +46,24 @@ public class Autenticacao extends JDialog {
 
     private void onOK() {
         // add your code here
-        DAO database = DAOCreator.factoryDAO("LocalDAO");
-        if(!database.getConnection(txtUsuario.getText(), txtSenha.getPassword().toString()).equals(null)){
-            ConstantesGlobais.statusConexao = "Conectado";
-            for(String linha : database.retrieve()){
-                ConstantesGlobais.textoFinal.add(linha);
-            }
+        String i = "LocalDAO";
+
+        System.out.println(txtUsuario.getText() + txtSenha.getText());
+        if(txtUsuario.getText().equals("si400_2022") && txtSenha.getText().equals("si400_2022")){
+            System.out.println("caiu aqui");
+            i = "MariaDBDAO";
         }
-        
+
+        System.out.println(i);
+        DAO database = DAOCreator.factoryDAO(i);
+        System.out.println(database.getConnection(txtUsuario.getText(),  txtSenha.getText()));
+
+        if(!database.getConnection("qualquercoisa", "qualquercoisa").equals(null)){
+            for(String linha : database.retrieve()){
+                ConstantesGlobais.textoFinal.add(linha+"\n");
+            }
+            ConstantesGlobais.statusConexao = "Conectado";
+        }
         dispose();
     }
 

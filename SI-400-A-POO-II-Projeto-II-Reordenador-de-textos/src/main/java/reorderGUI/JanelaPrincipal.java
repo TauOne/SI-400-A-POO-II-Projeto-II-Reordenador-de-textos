@@ -56,32 +56,40 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
 
     }
 
-    void setMsgStatus(String texto) {
+    void setMsgStatus(String texto, int sucesso) {
         this.labelStatus.setText(texto);
+        if(sucesso == 1){
+            this.painelStatus.setBackground(Color.green);
+        }
+        else{
+            this.painelStatus.setBackground(Color.red);
+
+        }
     }
 
     void inicia() {
-        this.setMsgStatus(ConstantesGlobais.statusConexao);
+        this.setMsgStatus(ConstantesGlobais.statusConexao,0);
         this.setVisible(true);
 
         this.rodando = true;
 
         Thread serverDispatcher = new Thread(this);
         serverDispatcher.start();
-        DAO database = DAOCreator.factoryDAO("LocalDAO");
-        if(!database.getConnection("qualquercoisa", "qualquercoisa").equals(null)){
-            ConstantesGlobais.statusConexao = "Conectado";
-            for(String linha : database.retrieve()){
-                ConstantesGlobais.textoFinal.add(linha);
+
+        while (ConstantesGlobais.statusConexao.equals("Desconectado")) {
+            System.out.println("Aguardando Conexão!");
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
-        
-        while (ConstantesGlobais.statusConexao.equals("Desconectado")) {
-
-        }
-        for (String linha : ConstantesGlobais.textoFinal) {
-
-            painelFundo.getTxtArea().setText(painelFundo.getTxtArea().getText() + linha);
+        if(ConstantesGlobais.statusConexao.equals("Conectado")){
+            this.setMsgStatus(ConstantesGlobais.statusConexao,1);
+            for (String linha : ConstantesGlobais.textoFinal) {
+                System.out.println(linha);
+                painelFundo.getTxtArea().setText(painelFundo.getTxtArea().getText() + linha);
+            }
         }
     }
 

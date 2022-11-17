@@ -26,7 +26,7 @@ public class MariaDBDAO implements DAO {
         if (con == null && usuario.equals(this.usuario) && senha.equals(this.senha)) {
             try {
                 con = DriverManager.getConnection(
-                        "jdbc:mariadb://localhost:3306/SI400",
+                        "jdbc:mariadb://143.106.243.64:3306/SI400",
                         usuario, senha
                 );
                 if (con != null) {
