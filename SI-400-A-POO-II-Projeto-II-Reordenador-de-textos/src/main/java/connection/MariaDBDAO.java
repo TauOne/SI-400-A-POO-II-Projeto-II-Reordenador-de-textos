@@ -35,6 +35,7 @@ public class MariaDBDAO implements DAO {
     public Connection getConnection(String usuario, String senha) {
         if (con == null && usuario.equals(this.usuario) && senha.equals(this.senha)) {
             try {
+                Class.forName("org.mariadb.jdbc.Driver");
                 con = DriverManager.getConnection(
                         "jdbc:mariadb://143.106.243.64:3306/SI400",
                         usuario, senha
@@ -44,6 +45,8 @@ public class MariaDBDAO implements DAO {
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(MariaDBDAO.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
             return con;
         }else{
