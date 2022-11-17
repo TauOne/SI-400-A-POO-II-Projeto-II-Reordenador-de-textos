@@ -87,7 +87,6 @@ class JanelaPrincipal extends JFrame implements ActionListener, Runnable {
         if(ConstantesGlobais.statusConexao.equals("Conectado")){
             this.setMsgStatus(ConstantesGlobais.statusConexao,1);
             for (String linha : ConstantesGlobais.textoFinal) {
-                System.out.println(linha);
                 painelFundo.getTxtArea().setText(painelFundo.getTxtArea().getText() + linha);
             }
             Exportacao.escrever(painelFundo.getTxtArea(), ConstantesGlobais.fileName);

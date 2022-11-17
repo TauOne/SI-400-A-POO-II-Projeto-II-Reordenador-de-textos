@@ -50,13 +50,10 @@ public class Autenticacao extends JDialog {
 
         System.out.println(txtUsuario.getText() + txtSenha.getText());
         if(txtUsuario.getText().equals("si400_2022") && txtSenha.getText().equals("si400_2022")){
-            System.out.println("caiu aqui");
             i = "MariaDBDAO";
         }
 
-        System.out.println(i);
         DAO database = DAOCreator.factoryDAO(i);
-        System.out.println(database.getConnection(txtUsuario.getText(),  txtSenha.getText()));
 
         if(!database.getConnection("qualquercoisa", "qualquercoisa").equals(null)){
             for(String linha : database.retrieve()){

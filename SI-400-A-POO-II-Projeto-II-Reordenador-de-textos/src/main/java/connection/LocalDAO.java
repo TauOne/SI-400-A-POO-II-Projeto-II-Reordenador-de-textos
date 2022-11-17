@@ -43,8 +43,8 @@ public class LocalDAO implements DAO {
             ResultSet rs = s.executeQuery("SELECT * FROM Fragmentos WHERE groupId = " + groupId + " ORDER BY line");
             while (rs.next()) {
                 texto.add(rs.getString("text"));
+                ConstantesGlobais.fileName = rs.getString("file");
             }
-            ConstantesGlobais.fileName = rs.getString("file");
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
         }

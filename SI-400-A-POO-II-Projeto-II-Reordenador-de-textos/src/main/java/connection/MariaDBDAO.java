@@ -1,5 +1,7 @@
 package connection;
 
+import reorderGUI.ConstantesGlobais;
+
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -49,6 +51,7 @@ public class MariaDBDAO implements DAO {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 texto.add(rs.getString("text"));
+                ConstantesGlobais.fileName = rs.getString("file");
             }
                     } catch (SQLException ex) {
             Logger.getLogger(MariaDBDAO.class.getName()).log(Level.SEVERE, null, ex);
